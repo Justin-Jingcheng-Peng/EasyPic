@@ -6,9 +6,9 @@ Unsplash clone. User can upload images (or input image URL) with labels, delete 
 
 To install the frontend dependencies:
 
-```
+```bash
 cd frontend
-npm install
+npm ci # This will do a clean install
 ```
 
 ## User Stories
