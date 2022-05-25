@@ -10,4 +10,5 @@
     "enable": true
   },
   "eslint.alwaysShowStatus": true,
+  "files.autoSave": "off"
 }
