@@ -2,6 +2,15 @@
 
 Unsplash clone. User can upload images (or input image URL) with labels, delete images, and view images uploaded. They can also search for photos by labels.
 
+## Build Instructions
+
+To install the frontend dependencies:
+
+```bash
+cd frontend
+npm ci # This will do a clean install
+```
+
 ## User Stories
 
 - User story: I can see a list of photos in the masonry layout that I have added
