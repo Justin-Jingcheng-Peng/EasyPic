@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
+import PhotoGrid from "./components/PhotoGrid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MainProvider } from "./context/MainContext";
 
@@ -9,6 +10,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Navbar />
+          <PhotoGrid />
         </header>
       </div>
     </MainProvider>
