@@ -36,9 +36,7 @@ app.get("/pictures", (req, res) => {
       title: "Item8",
     },
   ];
-  res.send({
-    pictures: pictures,
-  });
+  res.send(pictures);
 });
 
 app.listen(3001, () => {
