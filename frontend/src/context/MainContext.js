@@ -5,7 +5,7 @@ const MainContext = createContext();
 export const MainProvider = ({ children }) => {
   //This global state is to track if the app is in "edit" mode;
 
-  const [search, setSearch] = useState("Search by name");
+  const [search, setSearch] = useState("");
 
   return (
     <MainContext.Provider
