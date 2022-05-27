@@ -1,16 +1,19 @@
-import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import PhotoGrid from "./components/PhotoGrid";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { MainProvider } from "./context/MainContext";
 
 function App() {
-  const [keyword, setKeyword] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar />
-      </header>
-    </div>
+    <MainProvider>
+      <div className="App">
+        <header className="App-header">
+          <Navbar />
+          <PhotoGrid />
+        </header>
+      </div>
+    </MainProvider>
   );
 }
 
