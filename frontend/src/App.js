@@ -8,7 +8,7 @@ function App() {
   return (
     <MainProvider>
       <div className="AppUnsplash">
-        <header className="App-header">
+        <header className="App-header-unsplash1">
           <Navbar />
           <PhotoGrid />
         </header>
