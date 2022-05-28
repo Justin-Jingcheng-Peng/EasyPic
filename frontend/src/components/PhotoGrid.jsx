@@ -1,12 +1,11 @@
-import React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { useContext } from "react";
-import MainContext from "../context/MainContext";
 import Axios from "axios";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
+import MainContext from "../context/MainContext";
 
-export default function App() {
+export default function PhotoGrid() {
   const { allpics, setAllpics } = useContext(MainContext);
   const refreshDB = () => {
     Axios.get(`/pictures`).then((response) => {
