@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-
 const MainContext = createContext();
 
 export const MainProvider = ({ children }) => {
@@ -13,6 +12,8 @@ export const MainProvider = ({ children }) => {
       value={{
         search,
         setSearch,
+        allpics,
+        setAllpics,
       }}
     >
       {children}

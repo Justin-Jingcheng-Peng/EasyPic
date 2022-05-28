@@ -9,15 +9,15 @@ import Button from "react-bootstrap/Button";
 export default function App() {
   const { allpics, setAllpics } = useContext(MainContext);
   const refreshDB = () => {
-    Axios.get(`http://localhost:3001/`).then((response) => {
-      console.log(response);
+    Axios.get(`/pictures`).then((response) => {
+      setAllpics(response.data.users);
     });
   };
   return (
     <div className="main">
       <Button onClick={refreshDB}>Refresh DB</Button>
-      {/* <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-        {itemData
+      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        {allpics
           .filter((name) => name.title.includes("Item"))
           .map((item) => (
             <ImageListItem key={item.img}>
@@ -29,7 +29,7 @@ export default function App() {
               />
             </ImageListItem>
           ))}
-      </ImageList> */}
+      </ImageList>
     </div>
   );
 }
