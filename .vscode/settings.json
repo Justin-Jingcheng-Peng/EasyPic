@@ -10,5 +10,6 @@
     "enable": true
   },
   "eslint.alwaysShowStatus": true,
-  "files.autoSave": "off"
+  "files.autoSave": "off",
+  "python.formatting.provider": "black"
 }
