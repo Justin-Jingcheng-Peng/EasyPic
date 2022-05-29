@@ -6,8 +6,8 @@ import Logo from "./my_unsplash_logo.svg";
 
 function Navbar() {
   const { search, setSearch } = useContext(MainContext);
-  const handleSubmit = (photoLabel, photoUrl) =>
-    console.log(`Label: ${photoLabel}; URL: ${photoUrl}`);
+  const handleSubmit = (photo) =>
+    console.log(`Label: ${photo.label}; URL: ${photo.photoUrl}`);
   return (
     <div className="main">
       <img src={Logo} alt="Logo of the app" />
