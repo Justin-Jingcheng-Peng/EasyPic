@@ -5,11 +5,16 @@ import Modal from "react-bootstrap/Modal";
 
 export default function AddPhotoModal(props) {
   const [show, setShow] = useState(false);
-  const [label, setLabel] = useState("");
-  const [photoUrl, setPhotoUrl] = useState("");
+  const [photo, setPhoto] = useState({ label: "", photo_url: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setPhoto((photo) => ({ ...photo, [name]: value }));
+  };
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
   return (
     <React.Fragment>
       <Button variant="primary" onClick={handleShow}>
@@ -27,8 +32,9 @@ export default function AddPhotoModal(props) {
               <Form.Control
                 type="text"
                 placeholder="Enter label"
-                defaultValue={label}
-                onChange={setLabel}
+                value={photo.label}
+                onChange={handleChange}
+                name="label"
               />
             </Form.Group>
 
@@ -37,14 +43,17 @@ export default function AddPhotoModal(props) {
               <Form.Control
                 type="url"
                 placeholder="Enter URL"
-                defaultValue={photoUrl}
-                onChange={setPhotoUrl}
+                value={photo.photo_url}
+                onChange={handleChange}
+                name="photo_url"
               />
             </Form.Group>
             <Button
               variant="primary"
               type="submit"
-              onClick={() => props.onSubmit(label, photoUrl)}
+              onClick={() => {
+                props.onSubmit(photo);
+              }}
             >
               Submit
             </Button>
