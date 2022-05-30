@@ -7,23 +7,28 @@ export default class Navbar extends React.Component {
   render() {
     const { searchQuery, onSearchQueryChange, onSubmit } = this.props;
     return (
-      <div className="main">
-        <img src={Logo} alt="Logo of the app" />
-        <div className="search">
-          <TextField
-            id="outlined-basic"
-            variant="outlined"
-            name="searchQuery"
-            fullWidth
-            label="Search"
-            value={searchQuery}
-            onChange={(e) => {
-              onSearchQueryChange(e);
-            }}
-          />
+      <>
+        <div className="navbar">
+          <div className="logo">
+            <img src={Logo} alt="Logo of the app" />
+          </div>
+          <div className="search">
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              name="searchQuery"
+              size="small"
+              fullWidth
+              label="Search"
+              value={searchQuery}
+              onChange={(e) => {
+                onSearchQueryChange(e);
+              }}
+            />
+          </div>
+          <AddPhotoModal onSubmit={onSubmit} />
         </div>
-        <AddPhotoModal onSubmit={onSubmit} />
-      </div>
+      </>
     );
   }
 }

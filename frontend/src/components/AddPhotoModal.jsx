@@ -17,7 +17,7 @@ export default function AddPhotoModal(props) {
 
   return (
     <React.Fragment>
-      <Button variant="primary" onClick={handleShow}>
+      <Button id="add_photo_button" variant="primary" onClick={handleShow}>
         Add a Photo
       </Button>
 
