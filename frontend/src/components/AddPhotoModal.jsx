@@ -51,8 +51,11 @@ export default function AddPhotoModal(props) {
             <Button
               variant="primary"
               type="submit"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
                 props.onSubmit(photo);
+                setPhoto((photo) => ({ ...photo, label: "", photo_url: "" }));
               }}
             >
               Submit

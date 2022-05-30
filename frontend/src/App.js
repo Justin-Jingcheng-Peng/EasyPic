@@ -4,9 +4,6 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import PhotoGrid from "./components/PhotoGrid";
 
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-
 class App extends React.Component {
   constructor() {
     super();
@@ -15,6 +12,22 @@ class App extends React.Component {
       searchQuery: "",
     };
   }
+
+  getCookie = (name) => {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  };
 
   componentDidMount() {
     this.refreshList();
@@ -27,18 +40,25 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   };
 
-  handleSubmit = (photo) => {
-    console.log(photo);
+  handleSubmit = async (photo) => {
     if (photo.id) {
       axios
         .put(`/api/photos/${photo.id}/`, photo)
         .then((res) => this.refreshList())
         .catch((err) => console.log(err));
     } else {
-      axios
-        .post("/api/photos/", photo)
-        .then((res) => this.refreshList())
-        .catch((err) => console.log(err));
+      const csrfToken = this.getCookie("csrftoken");
+      try {
+        await axios.post("/api/photos/", photo, {
+          headers: {
+            "Content-type": "application/json",
+            "X-CSRFToken": csrfToken,
+          },
+        });
+        this.refreshList();
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
