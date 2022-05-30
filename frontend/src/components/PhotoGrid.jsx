@@ -12,7 +12,7 @@ export default class PhotoGrid extends React.Component {
 
     return (
       <div className="main">
-        <ImageList sx={{ width: 700, height: 450 }} cols={4} rowHeight={164}>
+        <ImageList sx={{ width: 1400, height: 700 }} cols={4} rowHeight={164}>
           {photos
             .filter((photo) => {
               return searchQuery ? photo.label === searchQuery : true;
