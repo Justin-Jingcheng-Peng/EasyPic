@@ -7,6 +7,29 @@
     row-gap: 20px;
 }
 
+.navbar{
+    position:relative;
+   
+    height: 50px;
+    margin-bottom: 20px;
+}
+.search{
+    position:absolute;
+    margin-top: 1%;
+    margin-left: 20%;
+}
+.logo{
+    position:absolute;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+#add_photo_button{
+   position: absolute;
+   margin-left: 80%;
+   margin-top: 1%;
+}
+
+
 
 h1 {
     margin: 10px;
