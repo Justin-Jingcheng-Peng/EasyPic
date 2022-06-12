@@ -8,36 +8,36 @@ To install the frontend dependencies:
 
 ```bash
 cd frontend
-npm ci # This will do a clean install
+npm install
 ```
 
-## User Stories
+To setup virtual environment and install backend dependencies:
 
-- User story: I can see a list of photos in the masonry layout that I have added
-- User story: I can add a new photo to the list - the new photo should be on top of the list
-- User story: I can search for photos by label
-- User story: When I hover a photo, I can see a label and a delete button
-- User story: I can delete images
+```bash
+cd backend
+python3 -m venv .env # We use venv, you can name the environment however you want
+source .env/bin/activate # activate virtual environment
+pip install -r requirements.txt # To install dependencies
+```
 
-## Tasks to do
+To set up dev environment, we need two terminal instances for the backend server and frontend `webpack` server:
 
-- [ ] Create the main `App` component which contains the `NavBar` and the `PhotoGrid` components.
-- [ ] Create the `NavBar` component which contains the logo of the web app, search bar, and Add a Photo button.
-- [ ] Create the `PhotoGrid` component to displays the photos in a grid-like fashion.
- - [ ] Create fake database with JSON file containing fake photos
-- [ ] Add style for React components (if not already)
-- [ ] Set up MongoDB.
-- [ ] Create a database model for the Photos.
-- [ ] Create a REST API for the CRUD Photos
- - [ ] GET: for the frontend to display photo.
- - [ ] POST: for creating new photos.
- - [ ] DELETE: for deleting photos.
+```bash
+## Start backend server
+# Make sure venv is activated
+cd backend
+python manage.py runserver
 
-### Tasks to be completed after the main tasks above are done
+## Build frontend files
+cd ../frontend
+npm start
+```
 
-- [ ] Requires user account if they want to upload image. All users should be able to view the images, but only users with accounts can upload and delete their own images.
-- [ ] Set up CI/CD pipeline with GitHub Actions. This is great to know and essential before deploying our app.
-- [ ] Deploy the app with Docker (?) and host the app with services like Netlify.
+## Features
+
+- User can create new photo by providing the photo's label and the URL.
+- User can delete photos.
+- Photos are displayed in a visually pleasing grid-like format.
 
 ## Credits
 
