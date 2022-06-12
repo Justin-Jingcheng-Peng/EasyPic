@@ -8,13 +8,35 @@ To install the frontend dependencies:
 
 ```bash
 cd frontend
-npm ci # This will do a clean install
+npm install
+```
+
+To setup virtual environment and install backend dependencies:
+
+```bash
+cd backend
+python3 -m venv .env # We use venv, you can name the environment however you want
+source .env/bin/activate # activate virtual environment
+pip install -r requirements.txt # To install dependencies
+```
+
+To set up dev environment, we need two terminal instances for the backend server and frontend `webpack` server:
+
+```bash
+## Start backend server
+# Make sure venv is activated
+cd backend
+python manage.py runserver
+
+## Build frontend files
+cd ../frontend
+npm start
 ```
 
 ## Features
 
 - User can create new photo by providing the photo's label and the URL.
-- User can delete photos. 
+- User can delete photos.
 - Photos are displayed in a visually pleasing grid-like format.
 
 ## Credits
