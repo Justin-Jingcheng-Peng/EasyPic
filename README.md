@@ -1,6 +1,6 @@
-# My Unsplash
+# EasyPic
 
-Unsplash clone. User can upload images (or input image URL) with labels, delete images, and view images uploaded. They can also search for photos by labels.
+In the current market, there are numerous gallery app that allow us to upload pictures by dragging pictures from our local documents, like VSCO. However, in some cases, we need to use the pictures directly from the internet. For example, if I want to convince my parents for a trip to Montreal, I need to find as many beautiful pictures as I can to show them how it is worth to do that. Another example could be when we want to make a collection gallery of our favourite basketball player, we don’t have their pictures in our documents, but we can find tons of their pictures on Google. In both cases we listed above, EasyPic can easily solve these issues. EasyPic allows us to upload pictures directly from anywhere on the internet by copying their URLs. The whole process wouldn’t take longer than 5 seconds. Then, our application will store these pictures in the database and you can visit them anytime you want.
 
 ## Build Instructions
 
